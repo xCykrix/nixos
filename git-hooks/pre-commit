@@ -7,9 +7,6 @@
     log info "hook: pre-commit";
 
     # Default Hook Error
-    log warning "hook behavior has not yet been configured";
-    error make --unspanned {
-      msg: "Failed to execute hook 'pre-commit'."
-      help: "Please review the above output to resolve this issue."
-    };
+    nu devops.nu run-stage 10
+    nu devops.nu run-stage 30
   }
