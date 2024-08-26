@@ -22,6 +22,7 @@
     {
       nixosConfigurations = {
         stellar-aurora = (import ./host/stellar-aurora.nix { inherit inputs global_opts; });
+        stellar-borealis = (import ./host/stellar-borealis.nix { inherit inputs global_opts; });
       };
     };
 }
