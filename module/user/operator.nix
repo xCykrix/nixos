@@ -24,6 +24,7 @@
       ## Modified At: ./module/package/basic.nix for System
 
       # Shell Configurations
+      starship
       nushell
       flake_bash_env
 
@@ -61,7 +62,12 @@
         plugin add (which nu_plugin_bash_env | get 0.path | into string)
         plugin use bash_env
         bash-env /etc/set-environment | load-env
+        use ~/.config/starship.toml
       '';
+    };
+
+    programs.starship = {
+      enable = true;
     };
 
     ## Local State
