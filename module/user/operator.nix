@@ -1,6 +1,7 @@
 {
   nixpkgs,
   global_opts,
+  flake_bash_env,
   ...
 }:
 {
@@ -24,6 +25,7 @@
 
       # Shell Configurations
       nushell
+      flake_bash_env
 
       # Archives
       zip
@@ -53,7 +55,14 @@
       };
     };
 
-
+    programs.nushell = {
+      enable = true;
+      loginFile.text = ''
+        plugin add (which nu_plugin_bash_env | get 0.path | into string)
+        plugin use bash_env
+        bash-env /etc/set-environment | load-env
+      '';
+    };
 
     ## Local State
     programs.home-manager.enable = true;

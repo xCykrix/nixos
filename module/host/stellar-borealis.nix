@@ -13,6 +13,7 @@ nixpkgs.lib.nixosSystem rec {
     home-manager = import inputs.home-manager {
       inherit system;
     };
+    flake_bash_env = inputs.nu_plugin_bash_env.packages.${system}.default;
   };
   modules = [
     ../server/boot.nix
@@ -28,7 +29,7 @@ nixpkgs.lib.nixosSystem rec {
     }
     {
       # Hostname
-      networking.hostName = "stellar-borealis";
+      networking.hostName = "stellar-aurora";
 
       # User & Security
       users.mutableUsers = true;

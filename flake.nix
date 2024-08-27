@@ -8,6 +8,12 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nu_plugin_bash_env = {
+      url = "github:tesujimath/nu_plugin_bash_env/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
