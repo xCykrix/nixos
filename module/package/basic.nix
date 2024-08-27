@@ -15,6 +15,7 @@
     clang
     gcc
     cmake
+    rustc
 
     # Global Programming Languages
 
