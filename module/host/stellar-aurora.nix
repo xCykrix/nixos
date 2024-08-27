@@ -15,11 +15,11 @@ nixpkgs.lib.nixosSystem rec {
     };
   };
   modules = [
-    ../module/server/boot.nix
-    ../module/server/disk.nix
-    ../module/server/hyperv.nix
-    ../module/package/basic.nix
-    ../module/user/operator.nix
+    ../server/boot.nix
+    ../server/disk.nix
+    ../server/hyperv.nix
+    ../package/basic.nix
+    ../user/operator.nix
     home-manager.nixosModules.home-manager
     {
       home-manager.backupFileExtension = "backup";
@@ -28,7 +28,7 @@ nixpkgs.lib.nixosSystem rec {
     }
     {
       # Hostname
-      networking.hostName = "stellar-borealis";
+      networking.hostName = "stellar-aurora";
 
       # User & Security
       users.mutableUsers = true;
@@ -38,7 +38,7 @@ nixpkgs.lib.nixosSystem rec {
       services.openssh.settings.PermitRootLogin = "yes";
 
       # System Packages for All Users | https://search.nixos.org/packages?channel=24.05
-      # See: ./module/package/basic.nix
+      # Modified At: ./module/package/basic.nix
 
       # Network Configuration.
       networking.firewall.allowedTCPPorts = [

@@ -19,13 +19,27 @@
     home.username = "operator";
     home.homeDirectory = "/home/operator";
     home.packages = with nixpkgs; [
+      ## User Packages for All Users | https://search.nixos.org/packages?channel=24.05
+      ## Modified At: ./module/package/basic.nix for System
+
       # Shell Configurations
       nushell
 
       # Archives
       zip
       unzip
+
+      # Structured Data Management
+      jq
+
+      # Development
+      gh
+
+      # Local Programming Languages
+      deno
     ];
+
+    # Git Configuration
     programs.git = {
       enable = true;
       userName = global_opts.name;
@@ -37,26 +51,12 @@
         commit.gpgsign = true;
         tag.gpgsign = true;
       };
-
     };
+
+
+
+    ## Local State
     programs.home-manager.enable = true;
     home.stateVersion = "24.05";
   };
 }
-
-# environment.systemPackages = with inputs.nixpkgs; [
-#   vim # Text Editor
-#   wget # HTTP Requests
-#   git # Version Control
-#   gh # GitHub CLI/API
-#   jq # JSON Query
-
-#   # Applications
-#   # ...
-
-#   # Programming Languages
-#   deno # Deno Programming Language
-
-#   # Formatting (VSCode)
-
-# ];
