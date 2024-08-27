@@ -8,6 +8,14 @@
     # Source Tracking
     git
 
+    # Compiling
+    clang
+    gcc
+    cmake
+
+    # Installers
+    cargo
+
     # Networking
     wget
     curl
