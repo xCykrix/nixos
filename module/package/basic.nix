@@ -1,7 +1,4 @@
-{
-  nixpkgs,
-  ...
-}:
+{ nixpkgs, ... }:
 {
   # Compatability - Auto Support Dynamic Libraries / FHS Configurations
   programs.nix-ld.enable = true;

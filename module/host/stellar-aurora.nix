@@ -10,9 +10,7 @@ nixpkgs.lib.nixosSystem rec {
       inherit system;
       config.allowUnfree = true;
     };
-    home-manager = import inputs.home-manager {
-      inherit system;
-    };
+    home-manager = import inputs.home-manager { inherit system; };
     flake_bash_env = inputs.nu_plugin_bash_env.packages.${system}.default;
   };
   modules = [
