@@ -7,5 +7,5 @@ def main [] {
   log info "stage-10.nu [validate]";
 
   # Verify Formatting
-  nixfmt -c flake.nix
+  nixfmt -cvs **/*.nix
 }
