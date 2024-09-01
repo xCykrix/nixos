@@ -15,6 +15,8 @@
     rustc
 
     # Global Programming Languages
+    deno
+    nodejs_22
 
     # Installers
     cargo

@@ -20,7 +20,7 @@
     home.username = "operator";
     home.homeDirectory = "/home/operator";
     home.packages = with nixpkgs; [
-      ## User Packages for All Users | https://search.nixos.org/packages?channel=24.05
+      ## User Packages for All Users (Below) | https://search.nixos.org/packages?channel=24.05
       ## Modified At: ./module/package/basic.nix for System
 
       # Shell Configurations
@@ -37,9 +37,6 @@
 
       # Development
       gh
-
-      # Local Programming Languages
-      deno
     ];
 
     # Git Configuration
