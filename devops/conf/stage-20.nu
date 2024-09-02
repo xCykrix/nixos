@@ -6,5 +6,5 @@ use std log;
 def main [] {
   log info "stage-20.nu [build]";
 
-  log warning "stage is not implemented";
+  log warning "stage not configured";
 }

@@ -8,5 +8,5 @@ def main [] {
 
   # Deploy and Switch on Local NixOS
   sudo nixos-rebuild build --flake "./flake.nix#stellar-aurora"
-  rm result;
+  rm -f result;
 }

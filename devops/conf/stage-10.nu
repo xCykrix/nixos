@@ -6,6 +6,5 @@ use std log;
 def main [] {
   log info "stage-10.nu [validate]";
 
-  # Verify Formatting
   nixfmt -cvs **/*.nix
 }
