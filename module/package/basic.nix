@@ -15,6 +15,7 @@
     rustc
 
     # Global Programming Languages
+    dotnetCorePackages.sdk_9_0
     deno
     nodejs_22
 
