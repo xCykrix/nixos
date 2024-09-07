@@ -60,6 +60,13 @@
         plugin use bash_env
         bash-env /etc/set-environment | load-env
         use ~/.config/starship.toml
+
+        export def sshreload [] {
+          $env.SSH_AUTH_SOCK = (ls /tmp/ssh-*/agent.* | get 0.name);
+        }
+        sshreload;
+
+        print "Initialized";
       '';
     };
 
