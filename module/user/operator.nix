@@ -62,7 +62,7 @@
         use ~/.config/starship.toml
       '';
       extraConfig = ''
-        $env.SSH_AUTH_SOCK = (ls /tmp/ssh-*/agent.* | get 0.name);
+        $env.SSH_AUTH_SOCK = (ls /tmp/ssh-*/agent.* | sort-by modified -r | get 0.name)
       '';
     };
 
