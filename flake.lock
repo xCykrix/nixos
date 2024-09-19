@@ -25,11 +25,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726440980,
-        "narHash": "sha256-ChhIrjtdu5d83W+YDRH+Ec5g1MmM0xk6hJnkz15Ot7M=",
+        "lastModified": 1726764199,
+        "narHash": "sha256-aiw08ZK7PBVwnOglT0rk+VI3ZqPgbFlOWP7SCFb8sHA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a9c9cc6e50f7cbd2d58ccb1cd46a1e06e9e445ff",
+        "rev": "1f7b8188a9c9c5ba32f9a8351c55f42ecc22b77c",
         "type": "github"
       },
       "original": {
@@ -80,11 +80,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1724370393,
-        "narHash": "sha256-NP9ZhLyz1/H/8gacn2ASA2D5ap52W9y4iErBb3jb30A=",
+        "lastModified": 1726735473,
+        "narHash": "sha256-1uBeZk2E086tvMhO+5RD3IFFZz9XAbK/4grbU2bh4Vg=",
         "owner": "tesujimath",
         "repo": "nu_plugin_bash_env",
-        "rev": "d4e5a5fca465f138ec0a4516500ea400390a65a4",
+        "rev": "15ad430e590445736059d2a7042c118900ac9bda",
         "type": "github"
       },
       "original": {
