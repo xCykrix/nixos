@@ -28,7 +28,7 @@ nixpkgs.lib.nixosSystem rec {
     {
       # Hostname
       networking.hostName = "stellar-borealis";
-
+      
       # User & Security
       users.mutableUsers = true;
       security.sudo.wheelNeedsPassword = false;
