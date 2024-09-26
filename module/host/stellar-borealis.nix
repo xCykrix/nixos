@@ -28,7 +28,7 @@ nixpkgs.lib.nixosSystem rec {
     {
       # Hostname
       networking.hostName = "stellar-borealis";
-      
+
       # User & Security
       users.mutableUsers = true;
       security.sudo.wheelNeedsPassword = false;
@@ -38,9 +38,6 @@ nixpkgs.lib.nixosSystem rec {
 
       # System Packages for All Users | https://search.nixos.org/packages?channel=24.05
       # Modified At: ./module/package/basic.nix
-
-      # System-wide Services.
-      services.ollama.enable = true;
 
       # Network Configuration.
       networking.firewall.allowedTCPPorts = [
