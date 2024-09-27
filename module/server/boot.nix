@@ -12,10 +12,12 @@
   # Global Networking Settings
   networking.useDHCP = nixpkgs.lib.mkDefault true;
   networking.networkmanager.enable = true;
-  networking.interfaces.eth1.ipv4.addresses = [{
-    address = "192.168.69.2";
-    prefixLength = 24;
-  }];
+  networking.interfaces.eth1.ipv4.addresses = [
+    {
+      address = "192.168.69.2";
+      prefixLength = 24;
+    }
+  ];
 
   # Started At (Do Not Change)
   system.stateVersion = "24.05";
