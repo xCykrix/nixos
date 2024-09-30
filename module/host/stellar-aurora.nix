@@ -53,5 +53,4 @@ nixpkgs.lib.nixosSystem rec {
       networking.firewall.allowedUDPPorts = [ ];
     }
   ];
-
 }
