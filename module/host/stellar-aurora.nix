@@ -11,7 +11,6 @@ nixpkgs.lib.nixosSystem rec {
       config.allowUnfree = true;
     };
     home-manager = import inputs.home-manager { inherit system; };
-    flake_bash_env = inputs.nu_plugin_bash_env.packages.${system}.default;
   };
   modules = [
     ../server/boot.nix
@@ -35,6 +34,10 @@ nixpkgs.lib.nixosSystem rec {
       # Enable OpenSSH.
       services.openssh.enable = true;
       services.openssh.settings.PermitRootLogin = "yes";
+      services.openssh.extraConfig = ''
+        Host *
+          IdentityAgent ~/.ssh/ssh_auth_sock
+      '';
 
       # System Packages for All Users | https://search.nixos.org/packages?channel=24.05
       # Modified At: ./module/package/basic.nix

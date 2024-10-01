@@ -1,7 +1,6 @@
 {
   nixpkgs,
   global_opts,
-  flake_bash_env,
   ...
 }:
 {
@@ -25,8 +24,6 @@
 
       # Shell Configurations
       starship
-      nushell
-      flake_bash_env
 
       # Archives
       zip
@@ -38,6 +35,21 @@
       # Development
       gh
     ];
+
+    # Shell
+    home.file.".ssh/rc".text = ''
+      #!/bin/bash
+
+      export SSH_AUTH_SOCK=$(find /tmp -maxdepth 2 -type s -name "agent*" -user $USER -printf '%T@ %p\n' 2>/dev/null |sort -n|tail -1|cut -d' ' -f2)
+    '';
+    programs.bash = {
+      enable = true;
+      bashrcExtra = ''
+        agent() {
+          export SSH_AUTH_SOCK=$(find /tmp -path '*/ssh-*' -name 'agent*' -uid $(id -u) 2>/dev/null | tail -n1)
+        }
+      '';
+    };
 
     # Git Configuration
     programs.git = {
@@ -51,19 +63,6 @@
         commit.gpgsign = true;
         tag.gpgsign = true;
       };
-    };
-
-    programs.nushell = {
-      enable = true;
-      loginFile.text = ''
-        plugin add (which nu_plugin_bash_env | get 0.path | into string)
-        plugin use bash_env
-        bash-env /etc/set-environment | load-env
-        use ~/.config/starship.toml
-      '';
-      extraConfig = ''
-        $env.SSH_AUTH_SOCK = (ls /tmp/ssh-*/agent.* | sort-by modified -r | get 0.name)
-      '';
     };
 
     programs.starship = {
