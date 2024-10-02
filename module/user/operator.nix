@@ -46,10 +46,15 @@
     home.file.".ssh/rc".text = ''
       #!/bin/bash
 
-      export SSH_AUTH_SOCK=$(find /tmp -maxdepth 2 -type s -name "agent*" -user $USER -printf '%T@ %p\n' 2>/dev/null |sort -n|tail -1|cut -d' ' -f2)
+      SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
     '';
     programs.bash = {
       enable = true;
+      extraConfig = ''
+        refresh() {
+          SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
+        }
+      '';
     };
 
     # Git Configuration
