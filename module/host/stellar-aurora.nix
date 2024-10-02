@@ -13,10 +13,10 @@ nixpkgs.lib.nixosSystem rec {
     home-manager = import inputs.home-manager { inherit system; };
   };
   modules = [
-    ../server/boot.nix
-    ../server/disk.nix
-    ../server/hyperv.nix
-    ../package/basic.nix
+    ../global/boot.nix
+    ../global/disk.nix
+    ../global/hyperv.nix
+    ../global/package.nix
     ../user/operator.nix
     home-manager.nixosModules.home-manager
     {
@@ -36,7 +36,7 @@ nixpkgs.lib.nixosSystem rec {
       services.openssh.settings.PermitRootLogin = "yes";
 
       # System Packages for All Users | https://search.nixos.org/packages?channel=24.05
-      # Modified At: ./module/package/basic.nix
+      # Modified At: ./module/global/package.nix
 
       # Network Configuration.
       networking.firewall.allowedTCPPorts = [
