@@ -36,24 +36,21 @@
       gh
     ];
 
-    # SSH Config
-    home.file.".ssh/config".text = ''
-      Host *
-        IdentityAgent ~/.ssh/ssh_auth_sock
-    '';
-
-    # Shell
+    # Local SSH Configuration(s)
     home.file.".ssh/rc".text = ''
       #!/bin/bash
 
       SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
     '';
+
+    # Shell
     programs.bash = {
       enable = true;
-      extraConfig = ''
+      bashrcExtra = ''
         refresh() {
           SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
         }
+        refresh
       '';
     };
 
