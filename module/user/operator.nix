@@ -25,13 +25,6 @@
       # Shell Configurations
       starship
 
-      # Archives
-      zip
-      unzip
-
-      # Structured Data Management
-      jq
-
       # Development
       gh
     ];

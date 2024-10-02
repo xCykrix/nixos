@@ -14,13 +14,14 @@
     cmake
     rustc
 
+    # Global Utilities, Tools, and Helpers
+    zip
+    unzip
+    jq
+
     # Global Programming Languages
-    dotnetCorePackages.sdk_9_0
     deno
     nodejs_22
-
-    # Installers
-    cargo
 
     # Networking
     wget
