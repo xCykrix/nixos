@@ -36,6 +36,12 @@
       gh
     ];
 
+    # SSH Config
+    home.file.".ssh/config".text = ''
+      Host *
+        IdentityAgent ~/.ssh/ssh_auth_sock
+    '';
+
     # Shell
     home.file.".ssh/rc".text = ''
       #!/bin/bash
@@ -44,11 +50,6 @@
     '';
     programs.bash = {
       enable = true;
-      bashrcExtra = ''
-        agent() {
-          export SSH_AUTH_SOCK=$(find /tmp -path '*/ssh-*' -name 'agent*' -uid $(id -u) 2>/dev/null | tail -n1)
-        }
-      '';
     };
 
     # Git Configuration

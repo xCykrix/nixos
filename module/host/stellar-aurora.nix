@@ -34,10 +34,6 @@ nixpkgs.lib.nixosSystem rec {
       # Enable OpenSSH.
       services.openssh.enable = true;
       services.openssh.settings.PermitRootLogin = "yes";
-      services.openssh.extraConfig = ''
-        Host *
-          IdentityAgent ~/.ssh/ssh_auth_sock
-      '';
 
       # System Packages for All Users | https://search.nixos.org/packages?channel=24.05
       # Modified At: ./module/package/basic.nix
