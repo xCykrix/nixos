@@ -20,7 +20,7 @@
     home.homeDirectory = "/home/operator";
     home.packages = with nixpkgs; [
       ## User Packages for All Users (Below) | https://search.nixos.org/packages?channel=24.05
-      ## Modified At: ./module/package/basic.nix for System
+      ## Modified At: ./module/global/package.nix for System
 
       # Shell Configurations
       starship
