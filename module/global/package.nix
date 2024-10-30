@@ -16,18 +16,11 @@
     rustc
     procps
     freetype
-    xorg.libXext
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libXi
 
     # Global Utilities, Tools, and Helpers
     zip
     unzip
     jq
-
-    # Jetbrains
-    jetbrains.webstorm
 
     # Global Programming Languages
     deno
