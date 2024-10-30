@@ -30,22 +30,22 @@
     ];
 
     # Local SSH Configuration(s)
-    home.file.".ssh/rc".text = ''
-      #!/bin/bash
+    # home.file.".ssh/rc".text = ''
+    #   #!/bin/bash
 
-      SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
-    '';
+    #   SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
+    # '';
 
     # Shell
     programs.bash = {
       enable = true;
-      bashrcExtra = ''
-        refresh() {
-          SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
-        }
-        PROMPT_COMMAND=refresh
-        refresh
-      '';
+      # bashrcExtra = ''
+      #   refresh() {
+      #     SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
+      #   }
+      #   PROMPT_COMMAND=refresh
+      #   refresh
+      # '';
     };
 
     # Git Configuration
